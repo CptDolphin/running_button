@@ -10,7 +10,7 @@ document.addEventListener('mousemove', (e) => {
     const x = e.pageX;
     const y = e.pageY;
 
-    let buttonBox = running_button.getBoundingClientRect();
+    const buttonBox = running_button.getBoundingClientRect();
     console.log(distance_from_center(buttonBox.x, x, buttonBox.width));
 
     const h_dist_from = distance_from_center(buttonBox.x, x, buttonBox.width);
@@ -30,7 +30,7 @@ document.addEventListener('mousemove', (e) => {
 
 function set_button_position(left, top){
     const window_box = document.body.getBoundingClientRect();
-    let buttonBox = running_button.getBoundingClientRect();
+    const buttonBox = running_button.getBoundingClientRect();
 
     if(distance_from_center(left, window_box.left, buttonBox.width) < 0) {
         left = window_box.right - buttonBox.width - OFFSET;
