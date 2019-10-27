@@ -9,15 +9,12 @@ const paths = [
 
 http.createServer((request, response) => {
     console.log('request.url', request.url);
-    //    const item = paths.find(item => item.re.test(request.url));
 
     paths.find(([re, filepath, type]) => {
         const matches0 = request.url.match(re);
         if(!matches0) {
             return;
         }
-
-        console.log('matches0: ', matches0);
 
         fs.readFile(path.join(__dirname, '../frontend/', request.url), (err, content) => {
             if (err){
