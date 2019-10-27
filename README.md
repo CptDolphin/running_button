@@ -1,7 +1,7 @@
 # Running Button app
 Quick app to play with DOM and element positions
 
-## To run node server with app on 127.0.0.1:7000
+## To run node server with app on 127.0.0.1:7000/index.html
 npm run start
 
 ## To delete after you're finished

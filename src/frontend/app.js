@@ -29,29 +29,29 @@ document.addEventListener('mousemove', (e) => {
 });
 
 function set_button_position(left, top){
-    const windowBox = document.body.getBoundingClientRect();
+    const window_box = document.body.getBoundingClientRect();
     let buttonBox = running_button.getBoundingClientRect();
 
-    if(distance_from_center(left, windowBox.left, buttonBox.width) < 0) {
-        left = windowBox.right - buttonBox.width - OFFSET;
+    if(distance_from_center(left, window_box.left, buttonBox.width) < 0) {
+        left = window_box.right - buttonBox.width - OFFSET;
     }
 
-    if(distance_from_center(left, windowBox.right, buttonBox.width) > 0) {
-        left = windowBox.left + OFFSET;
+    if(distance_from_center(left, window_box.right, buttonBox.width) > 0) {
+        left = window_box.left + OFFSET;
     }
     
-    if(distance_from_center(top, windowBox.top, buttonBox.height) < 0) {
-        top = windowBox.bottom - buttonBox.height - OFFSET;;
+    if(distance_from_center(top, window_box.top, buttonBox.height) < 0) {
+        top = window_box.bottom - buttonBox.height - OFFSET;;
     }
     
-    if(distance_from_center(top, windowBox.bottom, buttonBox.height) > 0) {
-        top = windowBox.top + OFFSET;
+    if(distance_from_center(top, window_box.bottom, buttonBox.height) > 0) {
+        top = window_box.top + OFFSET;
     }
     
     running_button.style.left = `${left}px`
     running_button.style.top = `${top}px`
 };
 
-function distance_from_center(boxPosition, mousePosition, boxSize){
-    return boxPosition - mousePosition + boxSize / 2;
+function distance_from_center(box_position, mousePosition, boxSize){
+    return box_position - mousePosition + boxSize / 2;
 };
